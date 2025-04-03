@@ -22,12 +22,12 @@ let overlays = {
 // Layercontrol
 L.control.layers({
     "BasemapAT grau": L.tileLayer.provider('BasemapAT.grau').addTo(map),
-    "BasemapAT basemap": L.tileLayer.provider('BasemapAT.basemap').addTo(map),
-    "BasemapAT overlay": L.tileLayer.provider('BasemapAT.overlay').addTo(map),
-    "BasemapAT terrain": L.tileLayer.provider('BasemapAT.terrain').addTo(map),
-    "BasemapAT surface": L.tileLayer.provider('BasemapAT.surface').addTo(map),
-    "BasemapAT highdpi": L.tileLayer.provider('BasemapAT.highdpi').addTo(map),
-    "BasemapAT orthofoto": L.tileLayer.provider('BasemapAT.orthofoto').addTo(map),
+    "BasemapAT basemap": L.tileLayer.provider('BasemapAT.basemap'),
+    "BasemapAT overlay": L.tileLayer.provider('BasemapAT.overlay'),
+    "BasemapAT terrain": L.tileLayer.provider('BasemapAT.terrain'),
+    "BasemapAT surface": L.tileLayer.provider('BasemapAT.surface'),
+    "BasemapAT highdpi": L.tileLayer.provider('BasemapAT.highdpi'),
+    "BasemapAT orthofoto": L.tileLayer.provider('BasemapAT.orthofoto'),
 
 }, {
     "Sehenswürdigkeiten": overlays.sights,
