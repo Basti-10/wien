@@ -18,7 +18,7 @@ let overlays = {
     stops: L.featureGroup().addTo(map),
     zones: L.featureGroup().addTo(map),
     hotels: L.featureGroup().addTo(map),
-}
+};
 
 // Layercontrol
 L.control.layers({
