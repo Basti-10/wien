@@ -107,7 +107,7 @@ async function loadStops(url) {
     // console.log(jsondata);
     L.geoJSON(jsondata, {
         attribution: "Datenquelle: <a href= 'Stadt Wien - https://data.wien.gv.at'>Stadt Wien</a>",
-        pointToLayer: function(feature,latlng) {
+        pointToLayer: function (feature, latlng) {
             //console.log(feature.properties);
 
             return L.marker(latlng, {
@@ -148,11 +148,11 @@ async function loadHotels(url) {
     // console.log(jsondata);
     L.geoJSON(jsondata, {
         attribution: "Datenquelle: <a href= 'Stadt Wien - https://data.wien.gv.at'>Stadt Wien</a>",
-        pointToLayer: function(feature,latlng) {
+        pointToLayer: function (feature, latlng) {
             //console.log(feature.properties);
             let iconName;
 
-            if(feature.properties.KATEGORIE_TXT == "5*") {
+            if (feature.properties.KATEGORIE_TXT == "5*") {
                 iconName = "hotel_5stars.png";
             } else if (feature.properties.KATEGORIE_TXT == "4*") {
                 iconName = "hotel_4stars.png";
