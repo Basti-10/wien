@@ -59,7 +59,7 @@ async function loadSights(url) {
                     popupAnchor: [0, -37],
                 })
             });
-        }      
+        }
     }).addTo(overlays.sights);
 }
 
