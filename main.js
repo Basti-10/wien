@@ -9,7 +9,10 @@ let stephansdom = {
 };
 
 // Karte initialisieren
-let map = L.map("map").setView([stephansdom.lat, stephansdom.lng], stephansdom.zoom);
+let map = L.map("map", {
+    maxZoom: 19,
+}).setView([stephansdom.lat, stephansdom.lng], stephansdom.zoom);
+
 
 // Overlays definieren 
 let overlays = {
@@ -17,7 +20,9 @@ let overlays = {
     lines: L.featureGroup().addTo(map),
     stops: L.featureGroup().addTo(map),
     zones: L.featureGroup().addTo(map),
-    hotels: L.featureGroup().addTo(map),
+    hotels: L.markerClusterGroup({
+        disableClusteringAtZoom: 17,
+    }).addTo(map),
 };
 
 // Layercontrol
@@ -59,8 +64,8 @@ async function loadSights(url) {
                     popupAnchor: [0, -37],
                 })
             });
-        }, 
-        onEachFeature: function(feature, layer) {
+        },
+        onEachFeature: function (feature, layer) {
             //console.log(feature.properties);
             layer.bindPopup(`
                 <img src="${feature.properties.THUMBNAIL}" alt="*">
