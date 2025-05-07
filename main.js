@@ -179,6 +179,7 @@ async function loadZones(url) {
     }).addTo(overlays.zones);
 }
 
+//loadHotels
 async function loadHotels(url) {
     // console.log(url);
     let response = await fetch(url);
@@ -218,9 +219,10 @@ async function loadHotels(url) {
             layer.bindPopup(`
                 <h4>${feature.properties.BETRIEB}</h4>
                 <h5>Hotel ${feature.properties.KATEGORIE_TXT}</h5>
+                <hr>
                 <p>Addr: ${feature.properties.ADRESSE}</p>
-                <p><i class="fa-solid fa-phone"></i>: ${feature.properties.KONTAKT_TEL}</p>
-                <i class="fa-solid fa-at"></i>: <a href="${feature.properties.KONTAKT_EMAIL}" target="wien">E-Mail</a>
+                <p><i class="fa-solid fa-phone"></i>: <a href="${feature.properties.KONTAKT_TEL}" target="wien">${feature.properties.KONTAKT_TEL}</a></p>
+                <i class="fa-solid fa-at"></i>: <a href="${feature.properties.KONTAKT_EMAIL}" target="wien">${feature.properties.KONTAKT_EMAIL} </a>
                 `);
         }
     }).addTo(overlays.hotels);
